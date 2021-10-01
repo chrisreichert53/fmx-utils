@@ -1,0 +1,684 @@
+id,tag,building\.id,building\.name
+1567283,M-1,213240,Atkinson Middle School (AMS)
+1567284,M-2,213240,Atkinson Middle School (AMS)
+1567285,M-3,213240,Atkinson Middle School (AMS)
+1567286,M-4,213240,Atkinson Middle School (AMS)
+1567287,M-5,213240,Atkinson Middle School (AMS)
+1567288,M-6,213240,Atkinson Middle School (AMS)
+1567289,M-7,213240,Atkinson Middle School (AMS)
+1567290,M-8,213240,Atkinson Middle School (AMS)
+1567291,M-9,213240,Atkinson Middle School (AMS)
+1567292,M-10,213240,Atkinson Middle School (AMS)
+1567293,M-11,213240,Atkinson Middle School (AMS)
+1567294,M-12,213240,Atkinson Middle School (AMS)
+1567295,M-13,213240,Atkinson Middle School (AMS)
+1567296,M-14,213240,Atkinson Middle School (AMS)
+1567297,M-15,213240,Atkinson Middle School (AMS)
+1567298,M-16,213240,Atkinson Middle School (AMS)
+1567299,M-17,213240,Atkinson Middle School (AMS)
+1567300,M-18,213240,Atkinson Middle School (AMS)
+1567301,M-19,213240,Atkinson Middle School (AMS)
+1567302,M-20,213240,Atkinson Middle School (AMS)
+1567303,M-21,213240,Atkinson Middle School (AMS)
+1567304,M-22,213240,Atkinson Middle School (AMS)
+1567305,M-23,213240,Atkinson Middle School (AMS)
+1567306,M-24,213240,Atkinson Middle School (AMS)
+1567307,M-25,213240,Atkinson Middle School (AMS)
+1567308,M-26,213240,Atkinson Middle School (AMS)
+1567309,M-27,213240,Atkinson Middle School (AMS)
+1567310,M-28,213240,Atkinson Middle School (AMS)
+1567311,M-29,213240,Atkinson Middle School (AMS)
+1567312,M-30,213240,Atkinson Middle School (AMS)
+1567313,M-31,213240,Atkinson Middle School (AMS)
+1567314,M-32,213240,Atkinson Middle School (AMS)
+1567315,M-33,213240,Atkinson Middle School (AMS)
+1567316,M-34,213240,Atkinson Middle School (AMS)
+1567317,M-35,213240,Atkinson Middle School (AMS)
+1567318,M-36,213240,Atkinson Middle School (AMS)
+1567319,M-37,213240,Atkinson Middle School (AMS)
+1567320,M-38,213240,Atkinson Middle School (AMS)
+1567321,M-39,213240,Atkinson Middle School (AMS)
+1567322,M-40,213240,Atkinson Middle School (AMS)
+1567323,M-41,213240,Atkinson Middle School (AMS)
+1567324,M-42,213240,Atkinson Middle School (AMS)
+1567325,M-43,213240,Atkinson Middle School (AMS)
+1567326,M-44,213240,Atkinson Middle School (AMS)
+1567327,M-45,213240,Atkinson Middle School (AMS)
+1567328,M-46,213240,Atkinson Middle School (AMS)
+1567329,M-47,213240,Atkinson Middle School (AMS)
+1567330,M-48,213240,Atkinson Middle School (AMS)
+1567331,M-49,213240,Atkinson Middle School (AMS)
+1567332,M-50,213240,Atkinson Middle School (AMS)
+1567333,M-51,213240,Atkinson Middle School (AMS)
+1567334,M-52,213240,Atkinson Middle School (AMS)
+1567335,M-53,213240,Atkinson Middle School (AMS)
+1567336,M-54,213240,Atkinson Middle School (AMS)
+1567337,M-55,213240,Atkinson Middle School (AMS)
+1567338,M-56,213240,Atkinson Middle School (AMS)
+1567339,M-57,213240,Atkinson Middle School (AMS)
+1567340,M-58,213240,Atkinson Middle School (AMS)
+1567341,M-59,213240,Atkinson Middle School (AMS)
+1567342,M-60,213240,Atkinson Middle School (AMS)
+1567343,M-61,213240,Atkinson Middle School (AMS)
+1567344,M-62,213240,Atkinson Middle School (AMS)
+1567345,M-63,213240,Atkinson Middle School (AMS)
+1567346,M-64,213240,Atkinson Middle School (AMS)
+1567347,M-65,213240,Atkinson Middle School (AMS)
+1567348,M-66,213240,Atkinson Middle School (AMS)
+1567349,M-67,213240,Atkinson Middle School (AMS)
+1567350,M-68,213240,Atkinson Middle School (AMS)
+1567351,M-69,213240,Atkinson Middle School (AMS)
+1567352,M-70,213240,Atkinson Middle School (AMS)
+1567353,M-71,213240,Atkinson Middle School (AMS)
+1567354,M-72,213240,Atkinson Middle School (AMS)
+1567355,M-73,213240,Atkinson Middle School (AMS)
+1567356,M-74,213240,Atkinson Middle School (AMS)
+1567357,M-75,213240,Atkinson Middle School (AMS)
+1567358,M-76,213240,Atkinson Middle School (AMS)
+1567359,M-77,213240,Atkinson Middle School (AMS)
+1567360,M-78,213240,Atkinson Middle School (AMS)
+1567361,M-79,213240,Atkinson Middle School (AMS)
+1567362,M-80,213240,Atkinson Middle School (AMS)
+1567363,M-81,213240,Atkinson Middle School (AMS)
+1567364,M-82,213240,Atkinson Middle School (AMS)
+1567365,M-83,213240,Atkinson Middle School (AMS)
+1567366,M-84,213240,Atkinson Middle School (AMS)
+1567367,M-85,213240,Atkinson Middle School (AMS)
+1567368,M-86,213240,Atkinson Middle School (AMS)
+1567369,M-87,213240,Atkinson Middle School (AMS)
+1567370,M-88,213240,Atkinson Middle School (AMS)
+1567371,M-89,213240,Atkinson Middle School (AMS)
+1567372,M-90,213240,Atkinson Middle School (AMS)
+1567373,M-91,213240,Atkinson Middle School (AMS)
+1567374,M-92,213240,Atkinson Middle School (AMS)
+1567375,M-93,213240,Atkinson Middle School (AMS)
+1567376,M-94,213240,Atkinson Middle School (AMS)
+1567377,M-95,213240,Atkinson Middle School (AMS)
+1567378,M-96,213240,Atkinson Middle School (AMS)
+1567379,M-97,213240,Atkinson Middle School (AMS)
+1567380,M-98,213240,Atkinson Middle School (AMS)
+1567381,M-99,213240,Atkinson Middle School (AMS)
+1567382,M-100,213240,Atkinson Middle School (AMS)
+1567383,M-101,213240,Atkinson Middle School (AMS)
+1567384,M-102,213240,Atkinson Middle School (AMS)
+1567385,M-103,213240,Atkinson Middle School (AMS)
+1567386,M-104,213240,Atkinson Middle School (AMS)
+1567387,M-105,213240,Atkinson Middle School (AMS)
+1567388,M-106,213240,Atkinson Middle School (AMS)
+1567389,M-107,213240,Atkinson Middle School (AMS)
+1567390,M-108,213240,Atkinson Middle School (AMS)
+1567391,M-109,213240,Atkinson Middle School (AMS)
+1567392,M-110,213240,Atkinson Middle School (AMS)
+1567393,M-111,213240,Atkinson Middle School (AMS)
+1567394,M-112,213240,Atkinson Middle School (AMS)
+1567395,M-113,213240,Atkinson Middle School (AMS)
+1567396,M-114,213240,Atkinson Middle School (AMS)
+1567397,M-115,213240,Atkinson Middle School (AMS)
+1567398,M-116,213240,Atkinson Middle School (AMS)
+1567399,M-117,213240,Atkinson Middle School (AMS)
+1567400,M-118,213240,Atkinson Middle School (AMS)
+1567401,M-119,213240,Atkinson Middle School (AMS)
+1567402,M-120,213240,Atkinson Middle School (AMS)
+1567403,M-121,213240,Atkinson Middle School (AMS)
+1567404,M-122,213240,Atkinson Middle School (AMS)
+1567405,M-123,213240,Atkinson Middle School (AMS)
+1567406,M-124,213240,Atkinson Middle School (AMS)
+1567407,M-125,213240,Atkinson Middle School (AMS)
+1567408,M-126,213240,Atkinson Middle School (AMS)
+1567409,M-127,213240,Atkinson Middle School (AMS)
+1567410,M-128,213240,Atkinson Middle School (AMS)
+1567411,M-129,213240,Atkinson Middle School (AMS)
+1567412,M-130,213240,Atkinson Middle School (AMS)
+1567413,M-131,213240,Atkinson Middle School (AMS)
+1567414,M-132,213240,Atkinson Middle School (AMS)
+1567415,M-133,213240,Atkinson Middle School (AMS)
+1567416,M-134,213240,Atkinson Middle School (AMS)
+1567417,M-135,213240,Atkinson Middle School (AMS)
+1567418,M-136,213240,Atkinson Middle School (AMS)
+1567419,M-137,213240,Atkinson Middle School (AMS)
+1567420,M-138,213240,Atkinson Middle School (AMS)
+1567421,M-139,213240,Atkinson Middle School (AMS)
+1567422,M-140,213240,Atkinson Middle School (AMS)
+1567423,M-141,213240,Atkinson Middle School (AMS)
+1567424,M-142,213240,Atkinson Middle School (AMS)
+1567425,M-143,213240,Atkinson Middle School (AMS)
+1567426,M-144,213240,Atkinson Middle School (AMS)
+1567427,M-145,213240,Atkinson Middle School (AMS)
+1567428,M-146,213240,Atkinson Middle School (AMS)
+1567429,M-147,213240,Atkinson Middle School (AMS)
+1567430,M-148,213240,Atkinson Middle School (AMS)
+1567431,M-149,213240,Atkinson Middle School (AMS)
+1567432,M-150,213240,Atkinson Middle School (AMS)
+1567433,M-151,213240,Atkinson Middle School (AMS)
+1567434,M-152,213240,Atkinson Middle School (AMS)
+1567435,M-153,213240,Atkinson Middle School (AMS)
+1567436,M-154,213240,Atkinson Middle School (AMS)
+1567437,M-155,213240,Atkinson Middle School (AMS)
+1567438,M-156,213240,Atkinson Middle School (AMS)
+1567439,M-157,213240,Atkinson Middle School (AMS)
+1567440,M-158,213240,Atkinson Middle School (AMS)
+1567441,M-159,213240,Atkinson Middle School (AMS)
+1567442,M-160,213240,Atkinson Middle School (AMS)
+1567443,M-161,213240,Atkinson Middle School (AMS)
+1567444,M-162,213240,Atkinson Middle School (AMS)
+1567445,M-163,213240,Atkinson Middle School (AMS)
+1567446,M-164,213240,Atkinson Middle School (AMS)
+1567447,M-165,213240,Atkinson Middle School (AMS)
+1567448,M-166,213240,Atkinson Middle School (AMS)
+1567449,M-167,213240,Atkinson Middle School (AMS)
+1567450,M-168,213240,Atkinson Middle School (AMS)
+1567451,M-169,213240,Atkinson Middle School (AMS)
+1567452,M-170,213240,Atkinson Middle School (AMS)
+1567453,M-171,213240,Atkinson Middle School (AMS)
+1567454,M-172,213240,Atkinson Middle School (AMS)
+1567455,M-173,213240,Atkinson Middle School (AMS)
+1567456,M-174,213240,Atkinson Middle School (AMS)
+1567457,M-175,213240,Atkinson Middle School (AMS)
+1567458,M-176,213240,Atkinson Middle School (AMS)
+1567459,M-177,213240,Atkinson Middle School (AMS)
+1567460,M-178,213240,Atkinson Middle School (AMS)
+1567461,M-179,213240,Atkinson Middle School (AMS)
+1567462,M-180,213240,Atkinson Middle School (AMS)
+1567463,M-181,213240,Atkinson Middle School (AMS)
+1567464,M-182,213240,Atkinson Middle School (AMS)
+1567465,M-183,213240,Atkinson Middle School (AMS)
+1567466,M-184,213240,Atkinson Middle School (AMS)
+1567467,M-185,213240,Atkinson Middle School (AMS)
+1567468,M-186,213240,Atkinson Middle School (AMS)
+1567469,M-187,213240,Atkinson Middle School (AMS)
+1567470,M-188,213240,Atkinson Middle School (AMS)
+1567471,M-189,213240,Atkinson Middle School (AMS)
+1567472,M-190,213240,Atkinson Middle School (AMS)
+1567473,M-191,213240,Atkinson Middle School (AMS)
+1567474,M-192,213240,Atkinson Middle School (AMS)
+1567475,M-193,213240,Atkinson Middle School (AMS)
+1567476,M-194,213240,Atkinson Middle School (AMS)
+1567477,M-195,213240,Atkinson Middle School (AMS)
+1567478,M-196,213240,Atkinson Middle School (AMS)
+1567479,M-197,213240,Atkinson Middle School (AMS)
+1567480,M-198,213240,Atkinson Middle School (AMS)
+1567481,M-199,213240,Atkinson Middle School (AMS)
+1567482,M-200,213240,Atkinson Middle School (AMS)
+1567483,M-201,213240,Atkinson Middle School (AMS)
+1567484,M-202,213240,Atkinson Middle School (AMS)
+1567485,M-203,213240,Atkinson Middle School (AMS)
+1567486,M-204,213240,Atkinson Middle School (AMS)
+1567487,M-205,213240,Atkinson Middle School (AMS)
+1567488,M-206,213240,Atkinson Middle School (AMS)
+1567489,M-207,213240,Atkinson Middle School (AMS)
+1567490,M-208,213240,Atkinson Middle School (AMS)
+1567491,M-209,213240,Atkinson Middle School (AMS)
+1567492,M-210,213240,Atkinson Middle School (AMS)
+1567493,M-211,213240,Atkinson Middle School (AMS)
+1567494,M-212,213240,Atkinson Middle School (AMS)
+1567495,M-213,213240,Atkinson Middle School (AMS)
+1567496,M-214,213240,Atkinson Middle School (AMS)
+1567497,M-215,213240,Atkinson Middle School (AMS)
+1567498,M-216,213240,Atkinson Middle School (AMS)
+1567499,M-217,213240,Atkinson Middle School (AMS)
+1567500,M-218,213240,Atkinson Middle School (AMS)
+1567501,M-219,213240,Atkinson Middle School (AMS)
+1567502,M-220,213240,Atkinson Middle School (AMS)
+1567503,M-221,213240,Atkinson Middle School (AMS)
+1567504,M-222,213240,Atkinson Middle School (AMS)
+1567505,M-223,213240,Atkinson Middle School (AMS)
+1567506,M-224,213240,Atkinson Middle School (AMS)
+1567507,M-225,213240,Atkinson Middle School (AMS)
+1567508,M-226,213240,Atkinson Middle School (AMS)
+1567509,M-227,213240,Atkinson Middle School (AMS)
+1567510,M-228,213240,Atkinson Middle School (AMS)
+1567511,M-229,213240,Atkinson Middle School (AMS)
+1567512,M-230,213240,Atkinson Middle School (AMS)
+1567513,M-231,213240,Atkinson Middle School (AMS)
+1567514,M-232,213240,Atkinson Middle School (AMS)
+1656155,M-1,213506,Charles W. Harris School
+1656156,M-2,213506,Charles W. Harris School
+1656157,M-3,213506,Charles W. Harris School
+1656158,M-4,213506,Charles W. Harris School
+1656159,M-5,213506,Charles W. Harris School
+1656160,M-6,213506,Charles W. Harris School
+1656161,M-7,213506,Charles W. Harris School
+1656162,M-8,213506,Charles W. Harris School
+1656163,M-11,213506,Charles W. Harris School
+1656164,M-13,213506,Charles W. Harris School
+1656165,M-14,213506,Charles W. Harris School
+1656166,M-16,213506,Charles W. Harris School
+1656167,M-15,213506,Charles W. Harris School
+1656168,M-17,213506,Charles W. Harris School
+1656169,M-18,213506,Charles W. Harris School
+1656170,M-20,213506,Charles W. Harris School
+1656171,M-21,213506,Charles W. Harris School
+1656172,M-22,213506,Charles W. Harris School
+1656173,M-23,213506,Charles W. Harris School
+1656174,M-27,213506,Charles W. Harris School
+1656175,M-28,213506,Charles W. Harris School
+1656176,M-29,213506,Charles W. Harris School
+1656177,M-30,213506,Charles W. Harris School
+1656178,M-31,213506,Charles W. Harris School
+1656179,M-33,213506,Charles W. Harris School
+1656180,M-34,213506,Charles W. Harris School
+1656181,M-35,213506,Charles W. Harris School
+1656182,M-36,213506,Charles W. Harris School
+1656183,M-37,213506,Charles W. Harris School
+1656184,M-38,213506,Charles W. Harris School
+1656185,M-39,213506,Charles W. Harris School
+1656186,M-40,213506,Charles W. Harris School
+1656187,M-41,213506,Charles W. Harris School
+1656188,M-42,213506,Charles W. Harris School
+1656189,M-43,213506,Charles W. Harris School
+1656190,M-44,213506,Charles W. Harris School
+1656191,M-45,213506,Charles W. Harris School
+1656192,M-46,213506,Charles W. Harris School
+1656193,M-47,213506,Charles W. Harris School
+1656194,M-48,213506,Charles W. Harris School
+1656195,M-50,213506,Charles W. Harris School
+1656196,M-53,213506,Charles W. Harris School
+1656197,M-54,213506,Charles W. Harris School
+1656198,M-55,213506,Charles W. Harris School
+1656199,M-57,213506,Charles W. Harris School
+1656200,M-58,213506,Charles W. Harris School
+1656201,M-61,213506,Charles W. Harris School
+1666107,M-54,213507,Desert Sands Middle School
+1666108,M-1,213509,Estrella Middle School
+1666109,M-2,213509,Estrella Middle School
+1666110,M-3,213509,Estrella Middle School
+1666111,M-6,213509,Estrella Middle School
+1666112,M-7,213509,Estrella Middle School
+1666113,M-8,213509,Estrella Middle School
+1666114,M-9,213509,Estrella Middle School
+1666115,M-10,213509,Estrella Middle School
+1666116,M-11,213509,Estrella Middle School
+1666117,M-12,213509,Estrella Middle School
+1666118,M-13,213509,Estrella Middle School
+1666119,M-15,213509,Estrella Middle School
+1666120,M-17,213509,Estrella Middle School
+1666121,M-18,213509,Estrella Middle School
+1666122,M-20,213509,Estrella Middle School
+1666123,M-21,213509,Estrella Middle School
+1666124,M-22,213509,Estrella Middle School
+1666125,M-23,213509,Estrella Middle School
+1666126,M-24,213509,Estrella Middle School
+1666127,M-25,213509,Estrella Middle School
+1666128,M-26,213509,Estrella Middle School
+1666129,M-27,213509,Estrella Middle School
+1666130,M-28,213509,Estrella Middle School
+1666131,M-29,213509,Estrella Middle School
+1666132,M-30,213509,Estrella Middle School
+1666133,M-31,213509,Estrella Middle School
+1666134,M-32,213509,Estrella Middle School
+1666135,M-33,213509,Estrella Middle School
+1666136,M-34,213509,Estrella Middle School
+1666137,M-35,213509,Estrella Middle School
+1666138,M-36,213509,Estrella Middle School
+1666139,M-37,213509,Estrella Middle School
+1666140,M-38,213509,Estrella Middle School
+1666141,M-39,213509,Estrella Middle School
+1666142,M-40,213509,Estrella Middle School
+1666143,M-41,213509,Estrella Middle School
+1666144,M-42,213509,Estrella Middle School
+1666145,M-43,213509,Estrella Middle School
+1666146,M-45,213509,Estrella Middle School
+1666147,M-46,213509,Estrella Middle School
+1666148,M-47,213509,Estrella Middle School
+1666149,M-48,213509,Estrella Middle School
+1666150,M-49,213509,Estrella Middle School
+1666151,M-50,213509,Estrella Middle School
+1666152,M-51,213509,Estrella Middle School
+1666153,M-52,213509,Estrella Middle School
+1666154,M-53,213509,Estrella Middle School
+1666155,M-56,213509,Estrella Middle School
+1666156,M-57,213509,Estrella Middle School
+1666157,M-58,213509,Estrella Middle School
+1666158,M-59,213509,Estrella Middle School
+1666159,M-60,213509,Estrella Middle School
+1666160,M-61,213509,Estrella Middle School
+1666161,M-62,213509,Estrella Middle School
+1666162,M-63,213509,Estrella Middle School
+1666163,M-64,213509,Estrella Middle School
+1666164,M-65,213509,Estrella Middle School
+1666165,M-66,213509,Estrella Middle School
+1666166,M-67,213509,Estrella Middle School
+1666167,M-68,213509,Estrella Middle School
+1666168,M-69,213509,Estrella Middle School
+1666169,M-70,213509,Estrella Middle School
+1666170,M-71,213509,Estrella Middle School
+1666172,M-72,213509,Estrella Middle School
+1666173,M-74,213509,Estrella Middle School
+1666174,M-75,213509,Estrella Middle School
+1666175,M-76,213509,Estrella Middle School
+1666176,M-77,213509,Estrella Middle School
+1666177,M-78,213509,Estrella Middle School
+1666178,M-81,213509,Estrella Middle School
+1666179,M-82,213509,Estrella Middle School
+1666180,M-83,213509,Estrella Middle School
+1666181,M-84,213509,Estrella Middle School
+1666182,M-86,213509,Estrella Middle School
+1666183,M-87,213509,Estrella Middle School
+1666184,M-89,213509,Estrella Middle School
+1666185,M-90,213509,Estrella Middle School
+1666186,M-91,213509,Estrella Middle School
+1666187,M-92,213509,Estrella Middle School
+1666188,M-93,213509,Estrella Middle School
+1666189,M-94,213509,Estrella Middle School
+1666190,M-95,213509,Estrella Middle School
+1666191,M-96,213509,Estrella Middle School
+1666192,M-97,213509,Estrella Middle School
+1666193,M-98,213509,Estrella Middle School
+1666194,M-99,213509,Estrella Middle School
+1666195,M-100,213509,Estrella Middle School
+1666196,M-101,213509,Estrella Middle School
+1666197,M-102,213509,Estrella Middle School
+1666198,M-104,213509,Estrella Middle School
+1666199,M-105,213509,Estrella Middle School
+1666200,M-107,213509,Estrella Middle School
+1666201,M-108,213509,Estrella Middle School
+1666202,M-109,213509,Estrella Middle School
+1666203,M-110,213509,Estrella Middle School
+1666204,M-111,213509,Estrella Middle School
+1666205,M-112,213509,Estrella Middle School
+1666206,M-114,213509,Estrella Middle School
+1666207,M-115,213509,Estrella Middle School
+1666208,M-116,213509,Estrella Middle School
+1666209,M-117,213509,Estrella Middle School
+1666210,M-118,213509,Estrella Middle School
+1666211,M-120,213509,Estrella Middle School
+1666212,M-121,213509,Estrella Middle School
+1666213,M-122,213509,Estrella Middle School
+1666214,M-123,213509,Estrella Middle School
+1656074,M-1,213511,Frank Borman School
+1656075,M-2,213511,Frank Borman School
+1656076,M-3,213511,Frank Borman School
+1656077,M-4,213511,Frank Borman School
+1656078,M-5,213511,Frank Borman School
+1656079,M-6,213511,Frank Borman School
+1656080,M-7,213511,Frank Borman School
+1656081,M-8,213511,Frank Borman School
+1656082,M-11,213511,Frank Borman School
+1656083,M-13,213511,Frank Borman School
+1656084,M-14,213511,Frank Borman School
+1656085,M-16,213511,Frank Borman School
+1656086,M-15,213511,Frank Borman School
+1656087,M-17,213511,Frank Borman School
+1656088,M-18,213511,Frank Borman School
+1656089,M-20,213511,Frank Borman School
+1656090,M-21,213511,Frank Borman School
+1656091,M-22,213511,Frank Borman School
+1656092,M-23,213511,Frank Borman School
+1656093,M-27,213511,Frank Borman School
+1656094,M-28,213511,Frank Borman School
+1656095,M-29,213511,Frank Borman School
+1656096,M-30,213511,Frank Borman School
+1656097,M-31,213511,Frank Borman School
+1656098,M-32,213511,Frank Borman School
+1656099,M-33,213511,Frank Borman School
+1656100,M-34,213511,Frank Borman School
+1656101,M-35,213511,Frank Borman School
+1656102,M-36,213511,Frank Borman School
+1656103,M-37,213511,Frank Borman School
+1656104,M-38,213511,Frank Borman School
+1656105,M-39,213511,Frank Borman School
+1656106,M-40,213511,Frank Borman School
+1656107,M-41,213511,Frank Borman School
+1656108,M-42,213511,Frank Borman School
+1656109,M-43,213511,Frank Borman School
+1656110,M-44,213511,Frank Borman School
+1656111,M-45,213511,Frank Borman School
+1656112,M-46,213511,Frank Borman School
+1656113,M-47,213511,Frank Borman School
+1656114,M-48,213511,Frank Borman School
+1656115,M-50,213511,Frank Borman School
+1656116,M-53,213511,Frank Borman School
+1656117,M-54,213511,Frank Borman School
+1656118,M-55,213511,Frank Borman School
+1656119,M-56,213511,Frank Borman School
+1656120,M-57,213511,Frank Borman School
+1656121,M-59,213511,Frank Borman School
+1656122,M-60,213511,Frank Borman School
+1656123,M-61,213511,Frank Borman School
+1656124,M-62,213511,Frank Borman School
+1656125,M-63,213511,Frank Borman School
+1656126,M-64,213511,Frank Borman School
+1656127,M-65,213511,Frank Borman School
+1656128,M-66,213511,Frank Borman School
+1656129,M-67,213511,Frank Borman School
+1656130,M-68,213511,Frank Borman School
+1656131,M-69,213511,Frank Borman School
+1656132,M-70,213511,Frank Borman School
+1656133,M-71,213511,Frank Borman School
+1656134,M-72,213511,Frank Borman School
+1656136,M-73,213511,Frank Borman School
+1656137,M-74,213511,Frank Borman School
+1656138,M-75,213511,Frank Borman School
+1656139,M-76,213511,Frank Borman School
+1656140,M-77,213511,Frank Borman School
+1656141,M-78,213511,Frank Borman School
+1656142,M-79,213511,Frank Borman School
+1656143,M-80,213511,Frank Borman School
+1656144,M-81,213511,Frank Borman School
+1656145,M-82,213511,Frank Borman School
+1656146,M-83,213511,Frank Borman School
+1656147,M-84,213511,Frank Borman School
+1656148,M-85,213511,Frank Borman School
+1656149,M-86,213511,Frank Borman School
+1656150,M-87,213511,Frank Borman School
+1656151,M-91,213511,Frank Borman School
+1656152,M-92,213511,Frank Borman School
+1656153,M-94,213511,Frank Borman School
+1656154,M-97,213511,Frank Borman School
+1656003,M-1,213516,Justine Spitalny School
+1656004,M-2,213516,Justine Spitalny School
+1656005,M-3,213516,Justine Spitalny School
+1656006,M-4,213516,Justine Spitalny School
+1656007,M-5,213516,Justine Spitalny School
+1656008,M-6,213516,Justine Spitalny School
+1656009,M-7,213516,Justine Spitalny School
+1656010,M-8,213516,Justine Spitalny School
+1656011,M-9,213516,Justine Spitalny School
+1656012,M-10,213516,Justine Spitalny School
+1656013,M-11,213516,Justine Spitalny School
+1656014,M-12,213516,Justine Spitalny School
+1656015,M-13,213516,Justine Spitalny School
+1656016,M-14,213516,Justine Spitalny School
+1656017,M-16,213516,Justine Spitalny School
+1656018,M-15,213516,Justine Spitalny School
+1656019,M-17,213516,Justine Spitalny School
+1656020,M-18,213516,Justine Spitalny School
+1656021,M-20,213516,Justine Spitalny School
+1656022,M-21,213516,Justine Spitalny School
+1656023,M-22,213516,Justine Spitalny School
+1656024,M-23,213516,Justine Spitalny School
+1656025,M-24,213516,Justine Spitalny School
+1656026,M-25,213516,Justine Spitalny School
+1656027,M-26,213516,Justine Spitalny School
+1656028,M-27,213516,Justine Spitalny School
+1656029,M-28,213516,Justine Spitalny School
+1656030,M-29,213516,Justine Spitalny School
+1656031,M-30,213516,Justine Spitalny School
+1656032,M-31,213516,Justine Spitalny School
+1656033,M-32,213516,Justine Spitalny School
+1656034,M-33,213516,Justine Spitalny School
+1656035,M-34,213516,Justine Spitalny School
+1656036,M-35,213516,Justine Spitalny School
+1656037,M-36,213516,Justine Spitalny School
+1656038,M-37,213516,Justine Spitalny School
+1656039,M-38,213516,Justine Spitalny School
+1656040,M-39,213516,Justine Spitalny School
+1656041,M-40,213516,Justine Spitalny School
+1656042,M-41,213516,Justine Spitalny School
+1656043,M-42,213516,Justine Spitalny School
+1656044,M-43,213516,Justine Spitalny School
+1656045,M-44,213516,Justine Spitalny School
+1656046,M-45,213516,Justine Spitalny School
+1656047,M-46,213516,Justine Spitalny School
+1656048,M-47,213516,Justine Spitalny School
+1656049,M-48,213516,Justine Spitalny School
+1656050,M-49,213516,Justine Spitalny School
+1656051,M-50,213516,Justine Spitalny School
+1656052,M-51,213516,Justine Spitalny School
+1656053,M-52,213516,Justine Spitalny School
+1656054,M-53,213516,Justine Spitalny School
+1656055,M-54,213516,Justine Spitalny School
+1656056,M-57,213516,Justine Spitalny School
+1656057,M-58,213516,Justine Spitalny School
+1656058,M-59,213516,Justine Spitalny School
+1656059,M-60,213516,Justine Spitalny School
+1656060,M-61,213516,Justine Spitalny School
+1656061,M-62,213516,Justine Spitalny School
+1656062,M-63,213516,Justine Spitalny School
+1656063,M-64,213516,Justine Spitalny School
+1656064,M-65,213516,Justine Spitalny School
+1656065,M-66,213516,Justine Spitalny School
+1656066,M-67,213516,Justine Spitalny School
+1656067,M-68,213516,Justine Spitalny School
+1656068,M-69,213516,Justine Spitalny School
+1656069,M-70,213516,Justine Spitalny School
+1656070,M-71,213516,Justine Spitalny School
+1656071,M-72,213516,Justine Spitalny School
+1656073,M-73,213516,Justine Spitalny School
+1660792,M-2,213517,Manuel Peña School
+1660793,M-3,213517,Manuel Peña School
+1660794,M-4,213517,Manuel Peña School
+1660795,M-5,213517,Manuel Peña School
+1660796,M-6,213517,Manuel Peña School
+1660797,M-7,213517,Manuel Peña School
+1660798,M-8,213517,Manuel Peña School
+1660799,M-9,213517,Manuel Peña School
+1660800,M-10,213517,Manuel Peña School
+1660801,M-12,213517,Manuel Peña School
+1660802,M-13,213517,Manuel Peña School
+1660803,M-15,213517,Manuel Peña School
+1660804,M-19,213517,Manuel Peña School
+1660805,M-22,213517,Manuel Peña School
+1660806,M-23,213517,Manuel Peña School
+1660807,M-24,213517,Manuel Peña School
+1660808,M-25,213517,Manuel Peña School
+1660809,M-26,213517,Manuel Peña School
+1660810,M-27,213517,Manuel Peña School
+1660811,M-28,213517,Manuel Peña School
+1660812,M-29,213517,Manuel Peña School
+1660813,M-30,213517,Manuel Peña School
+1660814,M-31,213517,Manuel Peña School
+1660815,M-32,213517,Manuel Peña School
+1660816,M-33,213517,Manuel Peña School
+1660817,M-34,213517,Manuel Peña School
+1660818,M-35,213517,Manuel Peña School
+1660819,M-36,213517,Manuel Peña School
+1660820,M-38,213517,Manuel Peña School
+1660821,M-39,213517,Manuel Peña School
+1660822,M-40,213517,Manuel Peña School
+1660823,M-41,213517,Manuel Peña School
+1660824,M-42,213517,Manuel Peña School
+1660825,M-43,213517,Manuel Peña School
+1660826,M-44,213517,Manuel Peña School
+1660827,M-45,213517,Manuel Peña School
+1660828,M-46,213517,Manuel Peña School
+1660829,M-47,213517,Manuel Peña School
+1660830,M-48,213517,Manuel Peña School
+1660831,M-51,213517,Manuel Peña School
+1660832,M-54,213517,Manuel Peña School
+1660833,M-55,213517,Manuel Peña School
+1660834,M-56,213517,Manuel Peña School
+1660835,M-57,213517,Manuel Peña School
+1660836,M-61,213517,Manuel Peña School
+1660837,M-64,213517,Manuel Peña School
+1660838,M-65,213517,Manuel Peña School
+1660839,M-66,213517,Manuel Peña School
+1660840,M-68,213517,Manuel Peña School
+1660841,M-69,213517,Manuel Peña School
+1660842,M-70,213517,Manuel Peña School
+1660843,M-71,213517,Manuel Peña School
+1660844,M-72,213517,Manuel Peña School
+1660845,M-73,213517,Manuel Peña School
+1660846,M-75,213517,Manuel Peña School
+1666215,M-3,213523,Sunset School
+1666216,M-4,213523,Sunset School
+1666217,M-5,213523,Sunset School
+1666218,M-7,213523,Sunset School
+1666219,M-8,213523,Sunset School
+1666220,M-9,213523,Sunset School
+1666221,M-10,213523,Sunset School
+1666222,M-11,213523,Sunset School
+1666223,M-12,213523,Sunset School
+1666224,M-13,213523,Sunset School
+1666225,M-14,213523,Sunset School
+1666226,M-16,213523,Sunset School
+1666227,M-18,213523,Sunset School
+1666228,M-19,213523,Sunset School
+1666229,M-21,213523,Sunset School
+1666230,M-22,213523,Sunset School
+1666231,M-23,213523,Sunset School
+1666232,M-25,213523,Sunset School
+1666233,M-26,213523,Sunset School
+1666234,M-27,213523,Sunset School
+1666235,M-28,213523,Sunset School
+1666236,M-29,213523,Sunset School
+1666237,M-30,213523,Sunset School
+1666238,M-31,213523,Sunset School
+1666239,M-32,213523,Sunset School
+1666240,M-36,213523,Sunset School
+1666241,M-37,213523,Sunset School
+1666242,M-38,213523,Sunset School
+1666243,M-39,213523,Sunset School
+1666244,M-40,213523,Sunset School
+1666245,M-41,213523,Sunset School
+1666246,M-42,213523,Sunset School
+1666247,M-43,213523,Sunset School
+1666248,M-48,213523,Sunset School
+1666249,M-49,213523,Sunset School
+1666250,M-51,213523,Sunset School
+1666251,M-52,213523,Sunset School
+1666252,M-53,213523,Sunset School
+1666253,M-54,213523,Sunset School
+1666254,M-55,213523,Sunset School
+1666255,M-56,213523,Sunset School
+1666256,M-57,213523,Sunset School
+1666257,M-58,213523,Sunset School
+1666258,M-59,213523,Sunset School
+1666259,M-60,213523,Sunset School
+1666260,M-61,213523,Sunset School
+1666261,M-63,213523,Sunset School
+1666262,M-65,213523,Sunset School
+1666263,M-66,213523,Sunset School
+1666264,M-67,213523,Sunset School
+1666265,M-68,213523,Sunset School
+1666266,M-70,213523,Sunset School
+1666267,M-3,213524,Tomahawk School
+1666268,M-6,213524,Tomahawk School
+1666269,M-7,213524,Tomahawk School
+1666270,M-8,213524,Tomahawk School
+1666271,M-9,213524,Tomahawk School
+1666272,M-10,213524,Tomahawk School
+1666273,M-11,213524,Tomahawk School
+1666274,M-13,213524,Tomahawk School
+1666275,M-14,213524,Tomahawk School
+1666276,M-19,213524,Tomahawk School
+1666277,M-20,213524,Tomahawk School
+1666278,M-21,213524,Tomahawk School
+1666279,M-23,213524,Tomahawk School
+1666280,M-25,213524,Tomahawk School
+1666281,M-26,213524,Tomahawk School
+1666282,M-27,213524,Tomahawk School
+1666283,M-28,213524,Tomahawk School
+1666284,M-29,213524,Tomahawk School
+1666285,M-30,213524,Tomahawk School
+1666286,M-31,213524,Tomahawk School
+1666287,M-32,213524,Tomahawk School
+1666288,M-33,213524,Tomahawk School
+1666289,M-34,213524,Tomahawk School
+1666290,M-36,213524,Tomahawk School
+1666291,M-37,213524,Tomahawk School
+1666292,M-38,213524,Tomahawk School
+1666293,M-39,213524,Tomahawk School
+1666294,M-48,213524,Tomahawk School
+1666295,M-49,213524,Tomahawk School
+1666296,M-51,213524,Tomahawk School
+1666297,M-58,213524,Tomahawk School
+1666298,M-59,213524,Tomahawk School
+1666299,M-62,213524,Tomahawk School
+1666300,M-63,213524,Tomahawk School
+1666301,M-67,213524,Tomahawk School
+1666302,M-70,213524,Tomahawk School
+1666303,M-73,213524,Tomahawk School
+1666304,M-74,213524,Tomahawk School
+1666305,M-79,213524,Tomahawk School
+1666306,M-84,213524,Tomahawk School

@@ -1,0 +1,25 @@
+{
+  "name": "fmx-update-equipment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/lodash": "^4.14.172",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "flat": "^5.0.2",
+    "inquirer": "^8.1.2",
+    "lodash": "^4.17.21",
+    "q": "^1.5.1",
+    "xlsx": "^0.17.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2",
+    "@types/inquirer": "^7.3.3",
+    "@types/q": "^1.5.5",
+    "typescript": "^4.3.5"
+  }
+}
