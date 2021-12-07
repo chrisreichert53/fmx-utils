@@ -12,8 +12,8 @@ import XLSX from 'xlsx';
   // Environment Variables
   const {
     URL,
-    USERNAME,
-    PASSWORD,
+    FMX_USERNAME,
+    FMX_PASSWORD,
     FILE_PATH,
     SHEET_BUILDING_FIELD,
     SHEET_TAG_FIELD,
@@ -30,8 +30,8 @@ import XLSX from 'xlsx';
   const request = axios.create({
     baseURL: `https://${URL}/api/v1`,
     auth: {
-      username: USERNAME,
-      password: PASSWORD,
+      username: FMX_USERNAME,
+      password: FMX_PASSWORD,
     },
   });
 
@@ -191,7 +191,11 @@ import XLSX from 'xlsx';
       (acc, res) => ({
         success: acc.success + (res.state === 'fulfilled' ? 1 : 0),
         fail: acc.fail + (res.state === 'fulfilled' ? 0 : 1),
-        failures: res.state === 'rejected' ? acc.failures.concat([res.reason]) : acc.failures,
+        failures: res.state === 'rejected' ? acc.failures.concat([{
+          status: res.reason.response.status,
+          config: JSON.stringify(res.reason.response.config, null, 2),
+          data: JSON.stringify(res.reason.response.data, null, 2)
+        }]) : acc.failures,
       }),
       { success: 0, fail: 0, failures: [] }
     )
