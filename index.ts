@@ -84,7 +84,7 @@ import XLSX from 'xlsx';
   );
 
   // Generate the PUT body changes. Must include the id
-  let changes: any = toBeChanged.map((change: object) => {
+  let changes: Array<any> = toBeChanged.map((change: object) => {
     const id = change[SHEET_ID_FIELD];
     const tag = change[SHEET_TAG_FIELD];
     const buildingID = siteBuildingIDs[change[SHEET_BUILDING_FIELD]];
