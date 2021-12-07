@@ -119,8 +119,9 @@ import XLSX from 'xlsx';
   const possibleFields = Object.keys(changes[0])
     .filter(
       (key) =>
-        (!key.startsWith('customFields') && key != 'id') ||
-        (key.startsWith('customFields') && key.endsWith('name'))
+        ((!key.startsWith('customFields') && key != 'id') ||
+          (key.startsWith('customFields') && key.endsWith('name'))) &&
+        changes[0][key] !== 'Location'
     )
     .map((key) =>
       key.startsWith('customFields')
@@ -147,6 +148,7 @@ import XLSX from 'xlsx';
   included = included.includes('all') ? possibleFields : included;
 
   // Final list of changes
+  const expectedChanges = changes.length;
   changes = changes
     .map((change: object) =>
       unflatten(
@@ -171,7 +173,8 @@ import XLSX from 'xlsx';
           customFieldID: id,
           value,
         })),
-    }));
+    }))
+    .filter((change: any) => change.id);
 
   // PUT all changes
   let results = await Q.allSettled(
@@ -186,18 +189,32 @@ import XLSX from 'xlsx';
   }));
 
   // Display the resulting success/fail counts
+  const finalResults = simpleResults.reduce(
+    (acc, res) => ({
+      success: acc.success + (res.state === 'fulfilled' ? 1 : 0),
+      fail: acc.fail + (res.state === 'fulfilled' ? 0 : 1),
+      failures:
+        res.state === 'rejected'
+          ? acc.failures.concat([
+              {
+                status: res.reason.response.status,
+                config: JSON.stringify(res.reason.response.config, null, 2),
+                data: JSON.stringify(res.reason.response.data, null, 2),
+              },
+            ])
+          : acc.failures,
+    }),
+    { success: 0, fail: 0, failures: [] }
+  );
+
   console.log(
-    simpleResults.reduce(
-      (acc, res) => ({
-        success: acc.success + (res.state === 'fulfilled' ? 1 : 0),
-        fail: acc.fail + (res.state === 'fulfilled' ? 0 : 1),
-        failures: res.state === 'rejected' ? acc.failures.concat([{
-          status: res.reason.response.status,
-          config: JSON.stringify(res.reason.response.config, null, 2),
-          data: JSON.stringify(res.reason.response.data, null, 2)
-        }]) : acc.failures,
-      }),
-      { success: 0, fail: 0, failures: [] }
+    JSON.stringify(
+      {
+        ...finalResults,
+        notCreated: expectedChanges - (finalResults.success + finalResults.fail),
+      },
+      null,
+      2
     )
   );
 })();
