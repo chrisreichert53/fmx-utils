@@ -14,7 +14,8 @@
     "xlsx": "^0.17.0"
   },
   "scripts": {
-    "start": "npx ts-node index.ts"
+    "start": "npx ts-node index.ts",
+    "start:python": "poetry run python index.py"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2",

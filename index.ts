@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { groupBy, find, countBy, pick, invert } from 'lodash';
-import flat, { unflatten } from 'flat';
+import { groupBy, find, countBy, pick, invert, last } from 'lodash';
+import flat from 'flat';
 import inquirer from 'inquirer';
 import Q from 'q';
 import dotenv from 'dotenv';
 import XLSX from 'xlsx';
+
+import { formatResults, createChangeSet } from './util';
 
 (async () => {
   dotenv.config();
@@ -23,8 +25,15 @@ import XLSX from 'xlsx';
   } = process.env;
 
   // Open the excel sheet
-  const wb: XLSX.WorkBook = XLSX.readFile(FILE_PATH);
-  const contents: object[] = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+  const wb: XLSX.WorkBook = XLSX.readFile(FILE_PATH, {
+    cellNF: true,
+    cellStyles: true,
+    cellDates: true,
+  });
+  const sheet = wb.Sheets[wb.SheetNames[0]];
+  const contents: object[] = XLSX.utils
+    .sheet_to_json(sheet)
+    .map((rowContent: object, i) => ({ ...rowContent, _row: i + 2, _id: rowContent['UniqueID'] }));
 
   // Configure the standard axios request
   const request = axios.create({
@@ -46,7 +55,6 @@ import XLSX from 'xlsx';
   });
 
   // Get the list of buildings that is included in the edit sheet
-  console.log(SHEET_BUILDING_FIELD);
   const sheetBuildings = Object.keys(groupBy(contents, SHEET_BUILDING_FIELD))
     .sort()
     .map((bldg) => {
@@ -79,20 +87,19 @@ import XLSX from 'xlsx';
   buildings = find(buildings, { name: 'all' }) ? sheetBuildings : buildings;
 
   // The updated list of items based on the buildings choice
-  const toBeChanged = contents.filter((item) =>
-    find(buildings, { name: item[SHEET_BUILDING_FIELD] })
-  );
+  const toBeChanged = contents.filter((item) => find(buildings, { name: item[SHEET_BUILDING_FIELD] }));
 
   // Generate the PUT body changes. Must include the id
-  let changes: Array<any> = toBeChanged.map((change: object) => {
+  let buildingEquipment: Array<any> = toBeChanged.map((change: object, i: number) => {
+    const _row = change['_row'];
     const id = change[SHEET_ID_FIELD];
     const tag = change[SHEET_TAG_FIELD];
     const buildingID = siteBuildingIDs[change[SHEET_BUILDING_FIELD]];
     const equipmentTypeID = equipmentTypeIDs[change[SHEET_TYPE_FIELD]];
-    const locationResourceID =
-      siteLocationIDs[`${change[SHEET_LOCATION_FIELD]} (${change[SHEET_BUILDING_FIELD]})`];
+    const locationResourceID = siteLocationIDs[`${change[SHEET_LOCATION_FIELD]} (${change[SHEET_BUILDING_FIELD]})`];
 
     let payload = {
+      _row,
       id,
       tag,
       buildingID,
@@ -115,106 +122,64 @@ import XLSX from 'xlsx';
     return flat(payload);
   });
 
-  // The possible fields to be included in the update.
-  const possibleFields = Object.keys(changes[0])
-    .filter(
-      (key) =>
-        ((!key.startsWith('customFields') && key != 'id') ||
-          (key.startsWith('customFields') && key.endsWith('name'))) &&
-        changes[0][key] !== 'Location'
-    )
-    .map((key) =>
-      key.startsWith('customFields')
-        ? {
-            name: changes[0][key],
-            value: key,
-          }
-        : {
-            name: key,
-            value: key,
-          }
-    )
-    .sort();
+  buildingEquipment = [buildingEquipment[0], last(buildingEquipment)];
 
-  let { included } = await inquirer.prompt([
-    {
-      type: 'checkbox',
-      name: 'included',
-      message: 'Which fields would you like to include in the update?',
-      choices: [{ name: 'all', value: 'all' }].concat(possibleFields),
-      default: ['tag', 'buildingID', 'equipmentTypeID'],
-    },
-  ]);
-  included = included.includes('all') ? possibleFields : included;
-
-  // Final list of changes
-  const expectedChanges = changes.length;
-  changes = changes
-    .map((change: object) =>
-      unflatten(
-        pick(
-          change,
-          ['id'].concat(included).reduce((acc, key) => {
-            acc.push(key);
-            if (key.startsWith('customFields')) {
-              acc.push(key.replace('.name', '.value'));
-              acc.push(key.replace('.name', '.id'));
-            }
-            return acc;
-          }, [])
-        )
-      )
-    )
-    .map((change: any) => ({
-      ...change,
-      customFields: (change.customFields || [])
-        .filter((field: any) => !!field)
-        .map(({ id, value }) => ({
-          customFieldID: id,
-          value,
-        })),
-    }))
-    .filter((change: any) => change.id);
-
-  // PUT all changes
-  let results = await Q.allSettled(
-    changes.map((change: any) => request.put(`/equipment/${change.id}`, change))
+  const oldEquipment = await createChangeSet(
+    buildingEquipment.filter((change: any) => change.id),
+    'update'
   );
 
-  // Change results
-  let simpleResults = results.map(({ state, value, reason }) => ({
-    state,
-    value: pick(value, ['status', 'data']),
-    reason,
-  }));
+  // PUT all old equipment updates
+  let results = await Q.allSettled(oldEquipment.map((change: any) => request.put(`/equipment/${change.id}`, change)));
 
-  // Display the resulting success/fail counts
-  const finalResults = simpleResults.reduce(
-    (acc, res) => ({
-      success: acc.success + (res.state === 'fulfilled' ? 1 : 0),
-      fail: acc.fail + (res.state === 'fulfilled' ? 0 : 1),
-      failures:
-        res.state === 'rejected'
-          ? acc.failures.concat([
-              {
-                status: res.reason.response.status,
-                config: JSON.stringify(res.reason.response.config, null, 2),
-                data: JSON.stringify(res.reason.response.data, null, 2),
-              },
-            ])
-          : acc.failures,
-    }),
-    { success: 0, fail: 0, failures: [] }
-  );
-
+  const notCreatedEquipment = buildingEquipment.length - oldEquipment.length;
   console.log(
     JSON.stringify(
       {
-        ...finalResults,
-        notCreated: expectedChanges - (finalResults.success + finalResults.fail),
+        ...formatResults(results),
+        notCreated: notCreatedEquipment,
       },
       null,
       2
     )
   );
+
+  if (notCreatedEquipment > 0) {
+    const { addEquipment } = await inquirer.prompt([
+      {
+        type: 'confirm',
+        name: 'addEquipment',
+        message: `Would you like to add (${notCreatedEquipment}) items?`,
+        default: false,
+      },
+    ]);
+
+    if (addEquipment) {
+      let newEquipment = await createChangeSet(
+        buildingEquipment.filter((change: any) => !change.id),
+        'upload'
+      );
+      newEquipment = newEquipment.map((change: any) => {
+        delete change.id;
+        return change;
+      });
+
+      let range = XLSX.utils.decode_range(sheet['!ref']);
+      for (let rowNum = range.s.r; rowNum <= range.e.r; rowNum++) {
+        var nextCell = XLSX.utils.encode_cell({ r: rowNum, c: 2 });
+        // var value = sheet[nextCell].v;
+        if (nextCell === 'C235') {
+          sheet[nextCell].v = 1;
+        }
+      }
+      XLSX.writeFile(wb, FILE_PATH);
+
+      // POST all new equipment
+      // results = await Q.allSettled(
+      //   newEquipment.map((change: any) => request.post(`/equipment`, change))
+      // );
+
+      // console.log(JSON.stringify(formatResults(results)));
+    }
+  }
 })();
