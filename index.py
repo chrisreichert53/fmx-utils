@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from openpyxl import load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
 from itertools import islice
-from pydash import invert, count_by, find, head, get, reduce_
+from pydash import invert, count_by, find, get, last
 import json_flatten as flat
 from concurrent.futures import ThreadPoolExecutor
 
@@ -48,7 +48,6 @@ data = (islice(r, 0, None) for r in data)
 df = DataFrame(data, index=idx, columns=cols)
 contents = df.to_dict("records")
 
-# print(df.iloc[0]["Old Tag"])
 site_equipment_options = s.get(f"https://{URL}/api/v1/equipment/get-options").json()
 site_building_ids_org = site_equipment_options["buildings"]
 site_building_ids = invert(site_building_ids_org)
@@ -78,6 +77,7 @@ buildings = (
 # Which equipment to include?
 filter_buildings = [bldg["name"] for bldg in buildings]
 to_be_changed = df[df[SHEET_BUILDING_FIELD].isin(filter_buildings)]
+
 building_equipment = [
     flat.flatten(
         {
@@ -139,6 +139,6 @@ if results["not_created"] > 0:
             id = res.get("id")
             for row in sheet.iter_rows():
                 if row[3].value == site_building_ids_org[str(res["buildingID"])] + res["tag"]:
-                    row[2].value = id
+                    row[2].value = str(id)
 
         wb.save(FILE_PATH)
