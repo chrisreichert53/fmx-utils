@@ -7,15 +7,15 @@ from openpyxl.worksheet.worksheet import Worksheet
 from itertools import islice
 from pydash import invert, count_by, find, get, last
 import json_flatten as flat
-from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 from pandas import DataFrame
 
+load_dotenv()  # take environment variables from .env.
+
 from util import changes, status_report
 from util.questions import do_add, which_buildings, which_fields
 
-load_dotenv()  # take environment variables from .env.
 
 URL = os.getenv("URL")
 FMX_USERNAME = os.getenv("FMX_USERNAME")
@@ -26,6 +26,7 @@ SHEET_TAG_FIELD = os.getenv("SHEET_TAG_FIELD")
 SHEET_TYPE_FIELD = os.getenv("SHEET_TYPE_FIELD")
 SHEET_ID_FIELD = os.getenv("SHEET_ID_FIELD")
 SHEET_LOCATION_FIELD = os.getenv("SHEET_LOCATION_FIELD")
+NUMBER_FIELDS = os.getenv("NUMBER_FIELDS")
 
 
 def initialize_session(session):
@@ -54,6 +55,7 @@ site_building_ids = invert(site_building_ids_org)
 equipment_type_ids = invert(site_equipment_options["equipmentTypes"])
 site_location_ids = invert(site_equipment_options["resources"])
 custom_field_ids = invert({**site_equipment_options["sortKeys"], **site_equipment_options["customFields"]})
+# print(json.dumps(custom_field_ids, indent=2))
 
 # Which buildings to include in update?
 sheet_buildings = df[SHEET_BUILDING_FIELD].unique()
@@ -78,43 +80,65 @@ buildings = (
 filter_buildings = [bldg["name"] for bldg in buildings]
 to_be_changed = df[df[SHEET_BUILDING_FIELD].isin(filter_buildings)]
 
-building_equipment = [
-    flat.flatten(
+building_equipment = []
+for index, row in to_be_changed.iterrows():
+    new_piece = {
+        "id": row[SHEET_ID_FIELD],
+        "tag": row[SHEET_TAG_FIELD],
+        "buildingID": site_building_ids[row[SHEET_BUILDING_FIELD]],
+        "equipmentTypeID": equipment_type_ids[row[SHEET_TYPE_FIELD]],
+    }
+    if row[SHEET_LOCATION_FIELD] is not None and row[SHEET_BUILDING_FIELD] is not None:
+        new_piece.update(
+            {
+                "locationResourceID": site_location_ids[
+                    row[SHEET_LOCATION_FIELD] + " (" + row[SHEET_BUILDING_FIELD] + ")"
+                ]
+            }
+        )
+    new_piece.update(
         {
-            "id": row[SHEET_ID_FIELD],
-            "tag": row[SHEET_TAG_FIELD],
-            "buildingID": site_building_ids[row[SHEET_BUILDING_FIELD]],
-            "equipmentTypeID": equipment_type_ids[row[SHEET_TYPE_FIELD]],
-            "locationResourceID": site_location_ids[
-                row[SHEET_LOCATION_FIELD] + " (" + row[SHEET_BUILDING_FIELD] + ")"
-            ],
             "customFields": [
-                {"id": custom_field_ids[id], "value": row[id], "name": id}
+                {
+                    "customFieldID": custom_field_ids[id],
+                    "value": str(row[id]) if id not in NUMBER_FIELDS else row[id],
+                    "name": id,
+                }
                 for id in custom_field_ids.keys()
                 if id in row
-            ],
+            ]
         }
     )
-    for index, row in to_be_changed.iterrows()
-]
+    building_equipment.append(flat.flatten(new_piece))
 
 # Which fields to include?
 fields = which_fields(building_equipment)
 changeset = changes(building_equipment, fields)
 
+for change in changeset:
+    if "customFields" in change:
+        change["customFields"] = [
+            cf for cf in change["customFields"] if cf["value"] is not None and cf["value"] != "None"
+        ]
+
 # Create and pool the requests
 reqs = [
     {
         "method": "PUT",
-        "url": f"https://{URL}/api/v1/equipment/" + change["id"],
+        "url": f"https://{URL}/api/v1/equipment/" + str(change["id"]),
         "data": json.dumps(change),
     }
     for change in changeset
     if get(change, "id") is not None
 ]
-results = {"success": 0, "fail": 0, "not_created": 0, "failures": []}
-responses, exceptions = threaded.map(reqs, initializer=initialize_session, num_processes=10)
-status_report(results, responses, to_be_changed.shape[0])
+# print(json.dumps(reqs, indent=2))
+
+# If building has some sort of changeset, run the following
+results = {"successes": [], "failures": [], "success": 0, "fail": 0, "not_created": 0}
+responses, exceptions = (
+    threaded.map(reqs, initializer=initialize_session, num_processes=10) if reqs != [] else ([], [])
+)
+status_report(results, responses, to_be_changed.shape[0], reqs)
 
 # Ask to generate new equipment
 if results["not_created"] > 0:
@@ -131,9 +155,9 @@ if results["not_created"] > 0:
             for change in changeset
             if get(change, "id") is None
         ]
-        results = {"success": 0, "fail": 0, "not_created": 0, "failures": []}
+        results = {"successes": [], "failures": [], "success": 0, "fail": 0, "not_created": 0}
         responses, exceptions = threaded.map(reqs, initializer=initialize_session, num_processes=10)
-        responses = status_report(results, responses, len(reqs))
+        responses = status_report(results, responses, len(reqs), reqs)
 
         for res in responses:
             id = res.get("id")

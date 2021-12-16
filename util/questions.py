@@ -1,6 +1,9 @@
+import os, json
 from typing import List, Literal
 from PyInquirer import prompt
 from pydash import head
+
+DEFAULT_FIELDS = os.getenv("DEFAULT_FIELDS", "")
 
 
 def which_buildings(buildings: List):
@@ -18,15 +21,9 @@ def which_buildings(buildings: List):
 def which_fields(building_equipment: List, type: Literal["update", "upload"] = "update"):
     first = head(building_equipment)
     possible_fields = [
-        {
-            "name": first[key],
-            "value": key,
-        }
+        {"name": first[key], "value": key, "checked": first[key] in DEFAULT_FIELDS}
         if key.startswith("customFields")
-        else {
-            "name": key,
-            "value": key,
-        }
+        else {"name": key, "value": key, "checked": key in DEFAULT_FIELDS}
         for key in first.keys()
         if (
             (not key.startswith("customFields") and key != "id")

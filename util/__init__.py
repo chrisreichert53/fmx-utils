@@ -1,12 +1,12 @@
 import json
 from typing import List
 from json_flatten import unflatten
-from pydash import pick_by, head, last, pick
+from requests_toolbelt.utils import dump
 
 
 def changes(equipment: List[object], fields: List[str]):
     output = []
-    fields = ["id"] + fields
+    fields = ["id", "id$int"] + fields
     for piece in equipment:
         change = {}
         for field in fields:
@@ -20,17 +20,23 @@ def changes(equipment: List[object], fields: List[str]):
     return output
 
 
-def status_report(results, responses, total_possible) -> List[dict]:
+def status_report(results, responses, total_possible, reqs: List[object]) -> List[dict]:
     responses_out = []
 
     # Create a status report
+    count = 0
     for resp in responses:
+        count = count + 1
         content = json.loads(resp.response.content.decode("utf-8"))
         responses_out.append(content)
         if resp.response.status_code < 300:
             results["success"] += 1
+            results["successes"].append(content)
         else:
             results["fail"] += 1
+            # data = dump.dump_all(resp)
+            # print(data.decode("utf-8"))
+            content.update({"request": reqs[count]})
             results["failures"].append(content)
 
     results["not_created"] = int(total_possible) - (results["success"] + results["fail"])
