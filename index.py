@@ -1,4 +1,6 @@
-import os, requests, json
+import os, requests, json, math
+from textwrap import indent
+from typing import Any
 from requests_toolbelt import threaded
 from pandas import DataFrame
 from dotenv import load_dotenv
@@ -81,6 +83,7 @@ filter_buildings = [bldg["name"] for bldg in buildings]
 to_be_changed = df[df[SHEET_BUILDING_FIELD].isin(filter_buildings)]
 
 building_equipment = []
+# print(json.dumps(site_location_ids, indent=2))
 for index, row in to_be_changed.iterrows():
     new_piece = {
         "id": row[SHEET_ID_FIELD],
@@ -115,11 +118,25 @@ for index, row in to_be_changed.iterrows():
 fields = which_fields(building_equipment)
 changeset = changes(building_equipment, fields)
 
+
+def is_float(element: Any) -> bool:
+    try:
+        float(element)
+        return True
+    except ValueError:
+        return False
+
+
 for change in changeset:
     if "customFields" in change:
         change["customFields"] = [
-            cf for cf in change["customFields"] if cf["value"] is not None and cf["value"] != "None"
+            cf
+            for cf in change["customFields"]
+            if (not is_float(cf["value"]) or (is_float(cf["value"]) and cf["value"] == cf["value"]))
+            and cf["value"] is not None
+            and cf["value"] != "None"
         ]
+# print(json.dumps(changeset, indent=2))
 
 # Create and pool the requests
 reqs = [
