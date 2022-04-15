@@ -28,13 +28,30 @@ SHEET_TAG_FIELD = os.getenv("SHEET_TAG_FIELD")
 SHEET_TYPE_FIELD = os.getenv("SHEET_TYPE_FIELD")
 SHEET_ID_FIELD = os.getenv("SHEET_ID_FIELD")
 SHEET_LOCATION_FIELD = os.getenv("SHEET_LOCATION_FIELD")
+DEFAULT_FIELDS = os.getenv("DEFAULT_FIELDS")
 NUMBER_FIELDS = os.getenv("NUMBER_FIELDS")
+BOOLEAN_FIELDS = os.getenv("BOOLEAN_FIELDS")
 
 
 def initialize_session(session):
     session.auth = (FMX_USERNAME, FMX_PASSWORD)
     session.headers["Content-Type"] = "application/json"
     return session
+
+
+def is_float(element: Any) -> bool:
+    try:
+        float(element)
+        return True
+    except ValueError:
+        return False
+
+
+def boolean(element: Any) -> bool:
+    try:
+        return element.lower() in [True, "true", "1", "t", "y", "yes", "yeah", "yup", "certainly", "uh-huh"]
+    except ValueError:
+        return False
 
 
 s = requests.Session()
@@ -104,7 +121,17 @@ for index, row in to_be_changed.iterrows():
             "customFields": [
                 {
                     "customFieldID": custom_field_ids[id],
-                    "value": str(row[id]) if id not in NUMBER_FIELDS else row[id],
+                    "value": float(row[id])
+                    if id in NUMBER_FIELDS and row[id] is not None and is_float(row[id])
+                    else None
+                    if id in NUMBER_FIELDS
+                    else boolean(row[id])
+                    if id in BOOLEAN_FIELDS and row[id] is not None
+                    else None
+                    if id in BOOLEAN_FIELDS
+                    else str(row[id])
+                    if id in DEFAULT_FIELDS
+                    else row[id],
                     "name": id,
                 }
                 for id in custom_field_ids.keys()
@@ -114,17 +141,12 @@ for index, row in to_be_changed.iterrows():
     )
     building_equipment.append(flat.flatten(new_piece))
 
+# print(json.dumps(building_equipment, indent=2))
+
+
 # Which fields to include?
 fields = which_fields(building_equipment)
 changeset = changes(building_equipment, fields)
-
-
-def is_float(element: Any) -> bool:
-    try:
-        float(element)
-        return True
-    except ValueError:
-        return False
 
 
 for change in changeset:
@@ -132,8 +154,8 @@ for change in changeset:
         change["customFields"] = [
             cf
             for cf in change["customFields"]
-            if (not is_float(cf["value"]) or (is_float(cf["value"]) and cf["value"] == cf["value"]))
-            and cf["value"] is not None
+            if cf["value"] is not None
+            and (not is_float(cf["value"]) or (is_float(cf["value"]) and cf["value"] == cf["value"]))
             and cf["value"] != "None"
         ]
 # print(json.dumps(changeset, indent=2))
